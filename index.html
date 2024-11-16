@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Networks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+    <script>
+// JavaScript to copy server IP
+function copyServerIP() {
+  const serverIP = "play.example.com"; // Replace with your actual server IP
+  navigator.clipboard.writeText(serverIP).then(() => {
+    document.getElementById("copy-message").innerText = "Server IP copied!";
+    setTimeout(() => {
+      document.getElementById("copy-message").innerText = ""; // Clear message after a few seconds
+    }, 2000); // Adjust time as desired
+  }).catch((err) => {
+    console.error("Failed to copy: ", err);
+  });
+}
+
+    </script>
+    
+    <script>// Function to check the aspect ratio of the image
+window.onload = function() {
+  var img = document.querySelector('.product-image img'); // Select the image inside product-image
+  var productImageContainer = document.querySelector('.product-image'); // Select the container
+
+  if (img) {
+    img.onload = function() {
+      // Calculate the aspect ratio (height / width)
+      var aspectRatio = img.naturalHeight / img.naturalWidth;
+
+      // If the aspect ratio is too high (meaning it's too tall), hide the image
+      if (aspectRatio > 2) {  // You can adjust the threshold (2) as needed
+        productImageContainer.classList.add('hidden');
+      }
+    }
+  }
+};
+</script>
+    
+<body>
+  <header class="main-header">
+    <div class="logo">
+      <img src="nova-logo.png" alt="Nova Networks Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="servers.html">Servers</a></li>
+        <li><a href="developer-blog.html" >Developer Blog</a></li>
+        <li><a href="baltop.html">DB</a></li>
+        <li><a href="shop.html">Shop</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<section class="product-section">
+  <div class="product-info">
+    <h6>OUT NOW!</h6>
+    <gradient-text>Collect All Blocks!</gradient-text>
+      <br>
+      <br>
+
+    <h2>Can you collect the 100+ different blocks?</h2>
+    <br>
+
+    <!-- Server IP and Copy Button -->
+    <div class="ip">
+      <span id="server-ip">cab.novamc.net</span> <!-- Update with your server IP -->
+        <br>
+        <br>
+        <br>
+      <b onclick="copyServerIP()" class="cta-button">Copy IP</b>
+    </div>
+    <br>
+    <!-- Message to show copy success -->
+    <p id="copy-message" class="copy-message"></p>
+  </div>
+  
+  <div class="product-image">
+    <img src="cab.png" alt="Auto Upgrade Pass">
+  </div>
+</section>
+
+
+
+    
+  <section class="hero">
+    <h1>Nova Networks</h1>
+    <p>Fun experiences for anyone in the community to enjoy!</p>
+    <a href="#servers" class="cta-button">Explore Servers</a>
+  </section>
+
+  <!-- Servers Section -->
+  <section id="servers" class="servers-section">
+    <h2>Our Network</h2>
+    <div class="server-grid">
+      <div class="server-card">
+        <img src="99.png" alt="Survival">
+        <h3>Nova99</h3>
+
+          <h1>Coming Soon</h1>
+                    <br>
+        <p>Our flagship server with a balanced economy, PVP and advanced progression. Over 20 areas to unlock across 2 worlds! Completely custom coded to create a fun experience for any player. </p>
+      </div>
+      <div class="server-card">
+        <img src="creative.png" alt="Creative">
+        <h3>Collect All Blocks!</h3>
+                    <h6>Out Now!</h6>
+        <p>Over 100+ rare blocks to collect in this unique box gamemode!</p> <p>Chances ranging from 50% drop chances, to 0.05%!</p> <br><h3>Can you collect them all?</h3>
+      </div>
+      <div class="server-card">
+        <img src="skyblock.png" alt="Skyblock">
+        <h3>Nova Survival</h3>
+                    <h1>Coming Soon</h1>
+                    <br>
+        <p>Our unique take on the original Survival gamemode. A mix of semi-vanilla with shopkeepers, a balanced economy, with a slight anarchy-twist. A non-inflated economy with money earnt through difficult grinding, with awesome bosses.</p>
+      </div>
+
+        
+    </div>
+  </section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+        <h1>Impressive Stats</h1>
+    <h2>We're only small!</h2>
+    <div class="container">
+        <div class="stats-grid">
+            <!-- Long Vertical Stat Box (left) -->
+            <div class="stat-box long-stat">
+                <h2>Concurrent Peak</h2>
+                <p>Collect All Blocks: 15 </p>
+                <!-- <small>That's 618 players on our overpowered network and proxy!</small> -->
+            </div>
+
+            <!-- Two Smaller Stat Boxes (right) -->
+            <div class="smaller-stats">
+                <div class="stat-box smaller-stat">
+                    <h2>Unique Joins</h2>
+                    <p>350 and counting..</p>
+                    <small>That's over 5000 database entries!</small>
+                </div>
+                <div class="stat-box smaller-stat">
+                    <h2>Rare Blocks Mined</h2>
+                    <p>1,658 and counting..</p>
+                    <small>Including blocks under 0.1% drop chance!</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Latest Updates Section -->
+  <section id="updates" class="updates-section">
+    <h2>Latest Updates</h2>
+    <div class="update-grid">
+      <div class="update-card">
+        <h3>Collect All Blocks - Announcement!</h3>
+        <p>Play our brand new unique gamemode and collect all 100 different blocks in this unique box server!</p>
+        <a href="post1.html" class="update-link">Learn More</a>
+      </div>
+      <div class="update-card">
+        <h3>N/A</h3>
+        <p>Nothing yet!</p>
+      </div>
+    </div>
+  </section>
+
+
+ <!--
+    <section class="product-section">
+  <div class="feature-info">
+        <div class="feature-image">
+    <img src="nova-survival-kit.png" alt="Nova Survival Kit">
+  </div>
+    <h1>New Feature!</h1><p></p>
+      <h2>Nova99 - DB</h2>
+    <p>View the top balances of the best players, every leaderboard in-game and more on our website!</p> <br> <h5>Available Now!</h5>
+      <br>
+    <a href="baltop.html" class="cta-button">View</a>
+  </div>
+
+</section>
+     -->
+    
+  <!-- Shop Promotion Section -->
+  <section id="shop" class="shop-section">
+    <h2>Shop Nova Products</h2>
+    <p>Grab the latest Nova Networks gear and in-game items from our shop!</p>
+      <br><br>
+    <a href="shop.html" class="cta-button">Visit Shop</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Nova Networks. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
+
+

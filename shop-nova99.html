@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Shop - Green Theme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Green Theme Styles */
+        body {
+            background-color: #e5f7e1; /* Light green background */
+            color: #2d6a4f; /* Dark green text */
+        }
+        .navbar, .footer {
+            background-color: #2d6a4f; /* Dark green for navbar and footer */
+            color: #ffffff;
+        }
+        .navbar .logo, .navbar a, .footer {
+            color: #ffffff; /* White text on green */
+        }
+        .navbar .nav-links a:hover {
+            background-color: #40916c; /* Hover effect with lighter green */
+        }
+        .page-header {
+            background-color: #52b788; /* Green header background */
+            color: #ffffff;
+        }
+        .products .product-card {
+            background-color: #d8f3dc; /* Light green product cards */
+            border: 2px solid #52b788; /* Border in darker green */
+        }
+        .product-card h3, .product-card p {
+            color: #2d6a4f; /* Dark green text */
+        }
+        .buy-btn {
+            background-color: #40916c; /* Green button */
+            color: #ffffff;
+        }
+        .buy-btn:hover {
+            background-color: #2d6a4f; /* Darker green on hover */
+        }
+        .horizontal-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #d8f3dc; /* Light green */
+            border: 2px solid #52b788;
+            margin-bottom: 20px;
+        }
+        .horizontal-item-pink {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f0d8f3; /* Light green */
+            border: 2px solid #b752b0;
+            margin-bottom: 20px;
+        }
+        .horizontal-item img {
+            width: 100px;
+            height: auto;
+        }
+        .horizontal-item .item-description {
+            flex-grow: 1;
+            padding-left: 20px;
+            color: #2d6a4f;
+        }
+        .horizontal-item-pink .item-description {
+            flex-grow: 1;
+            padding-left: 20px;
+            color: #eb5bc0;
+        }
+        .horizontal-item .price, .horizontal-item .buy-btn {
+            margin-left: 20px;
+            color: #2d6a4f;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation (same as other pages) -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Nova Shop</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Return Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Nova 99</h1>
+            <p>Boost your game, and boost the Nova99 Server too!</p>
+        </div>
+    </header>
+
+    <br>
+        <section class="horizontal-section">
+            <br>
+            <div class="horizontal-item-pink">
+                <div class="item-description">
+                    <h3>SPECIAL OFFER: Ends Soon!</h3>
+                    <p>Every purchase on our server stores across the network will also receive a "Discount Charm"! Enjoy 20% off all in-game cash-based crates when equipped!</p>
+                </div>
+            </div>
+        </section>
+    <br>
+        <!-- New Section: Long Horizontal Item -->
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Server 1: Nova99 -->
+        <section class="server-section">
+            <h2>Featured Now:</h2>
+            <div class="products">
+                <div class="product-card">
+                    <h3>Starter Pack!</h3>
+                    <p>Includes many useful items that span across many different features on the server, including 5000 Gems. Valued at $15!</p>
+                    <span class="price">$6.99</span>
+                                        <br>
+                    <br>
+                    <a href="nova99-shop.html" class="buy-btn">View</a> <!-- Link to Nova99 Shop Page -->
+                </div>
+                <div class="product-card">
+                    <h3>VIP!</h3>
+                    <p>Currently contains a BONUS 5000 Gems, 10x Crystal Keys, and the exclusive "Glass Breaker Tool", great for farming gems.</p>
+                    <span class="price">$4.99</span>
+                                        <br>
+                    <br>
+                    <a href="novarng-shop.html" class="buy-btn">View</a> <!-- Link to NovaRNG Shop Page -->
+                </div>
+                <div class="product-card">
+                    <h3>Small Gem Pack!</h3>
+                    <p>Instantly gives 10x Diamond Lootbags and 5000 Gems!</p>
+                    <span class="price">$7.99</span>
+                    <br>
+                    <br>
+                    <a href="novasurvival-shop.html" class="buy-btn">View</a> <!-- Link to NovaSurvival Shop Page -->
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- New Section: Featured Servers -->
+        <section class="server-section">
+            <h2>Featured Servers</h2>
+            <div class="products">
+                <div class="product-card">
+                    <img src="server1.jpg" alt="Server 1">
+                    <h3>Nova Kingdom</h3>
+                    <p>Rule the kingdom and unlock powerful gear!</p>
+                    <span class="price">$5.99</span>
+                    <a href="novakingdom-shop.html" class="buy-btn">View</a> <!-- Link to Nova Kingdom Shop Page -->
+                </div>
+                <div class="product-card">
+                    <img src="server2.jpg" alt="Server 2">
+                    <h3>Nova Racing</h3>
+                    <p>Race against your friends and upgrade your vehicles!</p>
+                    <span class="price">$6.99</span>
+                    <a href="novaracing-shop.html" class="buy-btn">View</a> <!-- Link to Nova Racing Shop Page -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nova99. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
