@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baltop - Nova99</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,22 +17,28 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="servers.html">Servers</a></li>
-        <li><a href="developer-blog.html" >Developer Blog</a></li>
-        <li><a href="baltop.html" class="active">DB</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li><a href="developer-blog.html" >Posts</a></li>
+        <li><a href="baltop.html" class="active">Leaderboards</a></li>
+        <li><a href="https://novanetworks.tebex.io">Shop</a></li>
       </ul>
     </nav>
   </header>
 
       <section class="hero">
-    <h1>Nova DB - Soon!</h1>
-    <p>Contains every leaderboard across the Nova Network, in one simple location! Updates every 5 minutes!</p>
+    <h1>BYTE Boards!</h1>
+    <p>Soon, you'll be able to access live leaderboards across our network within our website!</p>
+        <p>Check to see if you're dominating or being dominated without logging in!</p>
                       <a href="index.html" class="btn">Return to Home</a>
   </section>
 
 
-    <footer>
-        <p>&copy; 2024 Nova Networks. All rights reserved.</p>
-    </footer>
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 </body>
 </html>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nova Networks - Servers</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -16,45 +17,49 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="servers.html" class="active">Servers</a></li>
-        <li><a href="developer-blog.html">Developer Blog</a></li>
+        <li><a href="developer-blog.html" >Posts</a></li>
         <li><a href="baltop.html">DB</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li><a href="https://novanetworks.tebex.io">Shop</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="servers" class="servers-section">
+  <section id="servers" class="servers-section fade-in fade-delay-3">
     <h2>Our Network</h2>
     <div class="server-grid">
       <div class="server-card">
-        <img src="99.png" alt="Survival">
-        <h3>Nova99</h3>
-
-          <h1>Coming Soon</h1>
-                    <br>
-        <p>Our flagship server with a balanced economy, PVP and advanced progression. Over 20 areas to unlock across 2 worlds! Completely custom coded to create a fun experience for any player. </p>
+        <img src="full%20sized%20hoe.png" alt="Survival">
+        <h3>Fertilia!</h3>
+        <h6>Out Now!</h6>
+        <p>Increase Farm Level to get better crops to sell for more cash! Rebirth to unlock better crops and shop with the Travelling Merchant to get boosters!</p>
+        <br><h3>Today is your lucky day?</h3>
       </div>
       <div class="server-card">
         <img src="creative.png" alt="Creative">
         <h3>Collect All Blocks!</h3>
-                    <h6>Out Now!</h6>
-        <p>Over 100+ rare blocks to collect in this unique box gamemode!</p> <p>Chances ranging from 50% drop chances, to 0.05%!</p> <br><h3>Can you collect them all?</h3>
+        <h6>Out Now!</h6>
+        <p>Over 100+ rare blocks to collect in this unique box gamemode!</p>
+        <p>Chances ranging from 50% drop chances, to 0.05%!</p>
+        <br><h3>Can you collect them all?</h3>
       </div>
       <div class="server-card">
         <img src="skyblock.png" alt="Skyblock">
-        <h3>Nova Survival</h3>
-                    <h1>Coming Soon</h1>
-                    <br>
-        <p>Our unique take on the original Survival gamemode. A mix of semi-vanilla with shopkeepers, a balanced economy, with a slight anarchy-twist. A non-inflated economy with money earnt through difficult grinding, with awesome bosses.</p>
+        <h3>Cherry Ring</h3>
+        <h6>Out Now!</h6>
+        <p>Dive into the serene world of Cherry Ring, a 250x250 border survival server! With weekly server wipes, you'll need to act fast to rise to the top and become the most powerful player.</p>
+        <br><h3>Will you dominate the next wipe?</h3>
       </div>
-
-        
     </div>
   </section>
 
 
-  <footer>
-    <p>&copy; 2024 Nova Networks. All rights reserved.</p>
-  </footer>
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 </body>
 </html>

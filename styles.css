@@ -1,3 +1,244 @@
+    .site-footer {
+      background: #0a0a0a;
+      color: #ccc;
+      padding: 2rem 1rem;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 25%;
+      padding-right: 25%;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-container h4 {
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .footer-container ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-container li {
+      margin: 0.3rem 0;
+    }
+
+    .footer-container a,
+    .footer-container button {
+      color: #ccc;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: color 0.2s;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .footer-container a:hover,
+    .footer-container button:hover {
+      color: #00b4d8;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .email-modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .email-modal-content {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .email-modal-content code {
+      background: #222;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      color: #00b4d8;
+      font-size: 1.1rem;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .contact-button {
+      font-size: 1rem;
+      padding: 0.2rem 0.6rem;
+    }
+
+
+
+
+/* Animations */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeSlideUp 1.2s ease-out forwards;
+  opacity: 0; /* Start hidden */
+}
+
+
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeSlideUp 1.2s ease-out forwards;
+}
+
+/* Staggered delay classes */
+.fade-delay-1 { animation-delay: 0.2s; }
+.fade-delay-2 { animation-delay: 0.4s; }
+.fade-delay-3 { animation-delay: 0.6s; }
+.fade-delay-4 { animation-delay: 0.8s; }
+.fade-delay-5 { animation-delay: 1s; }
+
+
+/* Animations */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeSlideUp 1.2s ease-out forwards;
+  opacity: 0; /* Start hidden */
+}
+
+/* Map Showcase Section */
+
+
+
+
+.map-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.map-content h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.map-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+
+/* Make all images responsive */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Prevent content from overflowing */
+.container {
+  width: 100%;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.blog-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Ensure the header and nav also adapt */
+.main-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.main-header img {
+  flex-shrink: 0;
+  display: block;
+  max-width: 150px;
+  height: auto;
+  padding-left: 10;
+  
+}
+
+/* Fix nav for mobile */
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+@media (max-width: 600px) {
+  h1, h2, h3, p {
+    font-size: 1rem;
+  }
+}
 
 
 
@@ -34,7 +275,7 @@ body {
 
 .copy-btn {
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Outfit', sans-serif;
     padding: 8px 16px;
     font-size: 1em;
     background-color: #4CAF50; /* Customize button color */
@@ -58,7 +299,6 @@ body {
 .copy-message {
     color: #4CAF50;
     font-size: 0.9em;
-    visibility: hidden;
     margin-top: 15px;
 }
 
@@ -244,6 +484,7 @@ body {
 
 .navbar .logo {
     font-size: 1.5rem;
+    
     font-weight: bold;
     color: white;
     text-decoration: none;
@@ -335,13 +576,12 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
-.product-card img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 15px;
-    border-radius: 8px;
+.product-card {
+    flex: 1 1 100%;
+    min-width: 0;
+    overflow: hidden; /* Ensure overflow is handled */
 }
+
 
 .product-card h3 {
     font-size: 1.5rem;
@@ -593,7 +833,7 @@ footer p {
 .product-image {
   display: block; /* Make sure the image is displayed by default */
   text-align: right;
-  padding-right: 30%;
+  padding-right: 20%;
 }
 
 .feature-image {
@@ -603,7 +843,7 @@ footer p {
 }
 
 .product-image img {
-  padding-left: rem;
+  padding-left: 5rem;
 
   border-radius: 10px;
 }
@@ -634,7 +874,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   border-bottom: 1px solid #ccc;
 }
 
@@ -680,6 +920,7 @@ nav a:hover {
 
 .cta-button {
   background-color: #47c6fc;
+  font-family: 'Outfit', sans-serif;
   color: white;
   padding: 15px 30px;
   border-radius: 999px;
@@ -754,20 +995,12 @@ nav a:hover {
 }
 
 /* Servers Section */
-.servers-section {
-  padding: 80px 20px;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.servers-section h2 {
-  font-size: 3rem;
-  margin-bottom: 50px;
-}
-
+/* Existing CSS... */
 .server-grid {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px; /* Optional: spacing between rows */
 }
 
 .server-card {
@@ -780,22 +1013,19 @@ nav a:hover {
   transition: transform 0.3s ease;
 }
 
-.server-card:hover {
-  transform: translateY(-10px);
+/* Add this at the bottom of your CSS */
+@media screen and (max-width: 768px) {
+  .server-grid {
+    flex-direction: column;
+    align-items: center; /* Center the stacked cards */
+  }
+
+  .server-card {
+    width: 90%; /* Take up more horizontal space */
+    margin-bottom: 20px;
+  }
 }
 
-.server-grid img {
-  width: 10%;
-}
-
-.server-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.server-card p {
-  font-size: 1rem;
-}
 
 .release-tag {
   position: absolute;

@@ -42,12 +42,12 @@
                 <h3>Fishing Minigame</h3>
                 <p>Head through the new Fishing Portal to access the Fishing Area!</p>
                 <br>
-                      <img src="post2-img1.PNG" alt="Blog Post 1">
+                      <img src="img/post2-img1.PNG" alt="Blog Post 1">
                 <br><br><br>
                 <p>Claim a Rusty Rod from the Free Rod Merchant!</p>
-                      <img src="post2-img2.PNG" alt="Blog Post 1">
+                      <img src="img/post2-img2.PNG" alt="Blog Post 1">
                 <br><br><br><p>Collect Fishing Essence from Fishing to unlock new items!</p>
-                      <img src="post2-img3.PNG" alt="Blog Post 1">
+                      <img src="img/post2-img3.PNG" alt="Blog Post 1">
                 <br>
                 <br>
                 <h3>New Rods</h3>
@@ -62,7 +62,7 @@
                 <p>Available in the Fishing Merchant!</p>
                 <p>Also available for a small chance in the Travelling Merchant.</p>
                 <br>
-                      <img src="post2-img4.PNG" alt="Blog Post 1">
+                      <img src="img/post2-img4.PNG" alt="Blog Post 1">
                                             <br>
                 <br>
                 <h3>Luxuriant Charm</h3>
@@ -71,7 +71,7 @@
                 <p><b>60% - Money Lootbag</b></p>
                 <p><b>40% - Diamond Lootbag</b></p>
                 <br>
-                      <img src="post2-img5.PNG" alt="Blog Post 1">
+                      <img src="img/post2-img5.PNG" alt="Blog Post 1">
 <br>
 <br>
                 <br>
@@ -79,7 +79,7 @@
                 <p><b>Very very rarely,</b> the Hidden Bandit offers free items to players.</p>
                 <p>Keep an eye out in the <b>chat!</b></p>
                 <br>
-                      <img src="post2-img6.PNG" alt="Blog Post 1">
+                      <img src="img/post2-img6.PNG" alt="Blog Post 1">
                 <br><br>
                 <h2>Fixed</h2>
                 <p>- Major fixes to the Marketplace</p>
@@ -94,5 +94,13 @@
             </div>
         </div>
     </section>
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 </body>
 </html>

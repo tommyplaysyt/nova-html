@@ -44,7 +44,7 @@
                 <p>5 new <b>Common Blocks</b> have been added to the Mine!</p>
                 <p>The Dried Coral set has a high spawn chance.</p>
                 <br>
-                      <img src="post1-img.PNG" alt="Blog Post 1">
+                      <img src="img/post1-img.PNG" alt="Blog Post 1">
                 <br>
                 <br>
                 <h3>New Rare Blocks</h3>
@@ -53,7 +53,7 @@
                 <p>These are the rarest blocks ever added to the game, with a chance of just <b>0.01%!</b></p>
                 <p><b>Can you collect them all?</b></p>
                 <br>
-                      <img src="post1-img2.PNG" alt="Blog Post 1">
+                      <img src="img/post1-img2.PNG" alt="Blog Post 1">
                             <br>
                 <br>
                 <h3>Team War</h3>
@@ -61,15 +61,15 @@
                 <p>This current Team War will end <b>November 29.</b></p>
                 <p>Keep an eye out for the next Team War, it's Christmas-themed!</p>
                 <br>
-                      <img src="post1-img3.PNG" alt="Blog Post 1">
+                      <img src="img/post1-img3.PNG" alt="Blog Post 1">
                                             <br>
                 <br>
                 <h3>AFK Rewards</h3>
                 <p>Every <b>10 minutes</b> in the AFK Area, you'll now receive 1x <b>Crystal Key</b>!</p>
                 <p>A great way to support the server, while also receiving rewards!</p>
                 <br>
-                      <img src="post1-img4.PNG" alt="Blog Post 1">
-                      <img src="post1-img5.PNG" alt="Blog Post 1">
+                      <img src="img/post1-img4.PNG" alt="Blog Post 1">
+                      <img src="img/post1-img5.PNG" alt="Blog Post 1">
 <br>
 <br>
                 <h2>Fixed</h2>
@@ -90,5 +90,13 @@
             </div>
         </div>
     </section>
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 </body>
 </html>

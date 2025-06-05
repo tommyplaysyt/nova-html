@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nova Networks Developer Blog</title>
+  <title>Developer Blog - BYTE Play</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="blog-styles.css">
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -16,9 +17,9 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="servers.html">Servers</a></li>
-        <li><a href="developer-blog.html" class="active">Developer Blog</a></li>
+        <li><a href="developer-blog.html" class="active">Posts</a></li>
         <li><a href="baltop.html">DB</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li><a href="https://novanetworks.tebex.io">Shop</a></li>
       </ul>
     </nav>
   </header>
@@ -30,6 +31,24 @@
 
   <section class="blog-posts">
     <div class="post">
+      <img src="netherwart.png" alt="Blog Post 1">
+      <div class="post-content">
+        <h2>Fertilia: Update 1!</h2>
+        <p class="date">June 6, 2025</p>
+        <p class="excerpt">Check out the <b>new island, new crop, charms, pvp crates</b> and much more!</p>
+        <a href="post7.html" class="read-more">Read More</a>
+      </div>
+    </div>
+    <div class="post">
+      <img src="byteplay.png" alt="Blog Post 1">
+      <div class="post-content">
+        <h2>Re-branding Announcement</h2>
+        <p class="date">June 6, 2025</p>
+        <p class="excerpt">We're renaming our network to better reflect our evolving vision and the experiences we're working to create.</p>
+        <a href="post8.html" class="read-more">Read More</a>
+      </div>
+    </div>
+    <div class="post">
       <img src="cherry.png" alt="Blog Post 1">
       <div class="post-content">
         <h2>Nova: Cherry Ring - Announcement!</h2>
@@ -39,7 +58,7 @@
       </div>
     </div>
     <div class="post">
-      <img src="nova-placeholder.png" alt="Blog Post 1">
+      <img src="byteplay.png" alt="Blog Post 1">
       <div class="post-content">
         <h2>Collect All Blocks - Update 4!</h2>
         <p class="date">December 16, 2024</p>
@@ -48,7 +67,7 @@
       </div>
     </div>
     <div class="post">
-      <img src="nova-placeholder.png" alt="Blog Post 1">
+      <img src="byteplay.png" alt="Blog Post 1">
       <div class="post-content">
         <h2>Collect All Blocks - Update 3!</h2>
         <p class="date">December 1, 2024</p>
@@ -57,7 +76,7 @@
       </div>
     </div>
     <div class="post">
-      <img src="nova-placeholder.png" alt="Blog Post 1">
+      <img src="byteplay.png" alt="Blog Post 1">
       <div class="post-content">
         <h2>Collect All Blocks - Update 2!</h2>
         <p class="date">November 25, 2024</p>
@@ -66,7 +85,7 @@
       </div>
     </div>
     <div class="post">
-      <img src="nova-placeholder.png" alt="Blog Post 1">
+      <img src="byteplay.png" alt="Blog Post 1">
       <div class="post-content">
         <h2>Collect All Blocks - Update 1!</h2>
         <p class="date">November 14, 2024</p>
@@ -76,7 +95,7 @@
     </div>
 
           <div class="post">
-      <img src="nova-placeholder.png" alt="Blog Post 1">
+      <img src="byteplay.png" alt="Blog Post 1">
       <div class="post-content">
         <h2>Collect All Blocks - Announcement!</h2>
         <p class="date">November 9, 2024</p>
@@ -88,8 +107,13 @@
     <!-- Additional blog posts can be added here -->
   </section>
 
-  <footer>
-    <p>&copy; 2024 Nova Networks. All rights reserved.</p>
-  </footer>
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 </body>
 </html>

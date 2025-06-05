@@ -1,50 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nova Networks</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BYTE Play</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="styles.css"/>
 
-    <script>
-// JavaScript to copy server IP
-function copyServerIP() {
-  const serverIP = "play.example.com"; // Replace with your actual server IP
-  navigator.clipboard.writeText(serverIP).then(() => {
-    document.getElementById("copy-message").innerText = "Server IP copied!";
-    setTimeout(() => {
-      document.getElementById("copy-message").innerText = ""; // Clear message after a few seconds
-    }, 2000); // Adjust time as desired
-  }).catch((err) => {
-    console.error("Failed to copy: ", err);
-  });
-}
-
-    </script>
-    
-    <script>// Function to check the aspect ratio of the image
-window.onload = function() {
-  var img = document.querySelector('.product-image img'); // Select the image inside product-image
-  var productImageContainer = document.querySelector('.product-image'); // Select the container
-
-  if (img) {
-    img.onload = function() {
-      // Calculate the aspect ratio (height / width)
-      var aspectRatio = img.naturalHeight / img.naturalWidth;
-
-      // If the aspect ratio is too high (meaning it's too tall), hide the image
-      if (aspectRatio > 2) {  // You can adjust the threshold (2) as needed
-        productImageContainer.classList.add('hidden');
+  <style>
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
-  }
-};
-</script>
-    
+
+    .fade-in-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .fade-in-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .map-showcase {
+      position: relative;
+      background: url('our-worlds.png') center center / cover no-repeat;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .map-overlay {
+      position: absolute;
+      inset: 0;
+      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .map-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+
+    .achievements-section {
+      background: #0f0f0f;
+      padding: 4rem 2rem;
+      color: white;
+      text-align: center;
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .achievement-card {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 150, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .achievement-card:hover {
+      transform: scale(1.03);
+    }
+
+    .achievement-card h3 {
+      margin-bottom: 1rem;
+      color: #00bfff;
+    }
+
+    .achievement-card p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+  </style>
+</head>
 <body>
-  <header class="main-header">
+
+  <header class="main-header fade-in-on-scroll">
     <div class="logo">
       <img src="nova-logo.png" alt="Nova Networks Logo">
     </div>
@@ -52,157 +103,214 @@ window.onload = function() {
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="servers.html">Servers</a></li>
-        <li><a href="developer-blog.html" >Developer Blog</a></li>
+        <li><a href="developer-blog.html">Posts</a></li>
         <li><a href="baltop.html">DB</a></li>
-        <li><a href="shop.html">Shop</a></li>
+        <li><a href="https://novanetworks.tebex.io">Shop</a></li>
       </ul>
     </nav>
   </header>
 
-<section class="product-section">
-  <div class="product-info">
-    <h6>OUT NOW!</h6>
-    <gradient-text>Collect All Blocks!</gradient-text>
-      <br>
-      <br>
-
-    <h2>Can you collect the 100+ different blocks?</h2>
-    <br>
-
-    <!-- Server IP and Copy Button -->
-    <div class="ip">
-      <span id="server-ip">cab.novamc.net</span> <!-- Update with your server IP -->
-        <br>
-        <br>
-        <br>
-      <b onclick="copyServerIP()" class="cta-button">Copy IP</b>
+  <section class="product-section fade-in-on-scroll">
+    <div class="product-info">
+      <h6>OUT NOW!</h6>
+      <gradient-text>Fertilia!</gradient-text>
+      <br><br>
+      <h2>Today is your lucky day?</h2><br>
+      <div class="ip">
+        <span id="server-ip">fertilia.novamc.net</span><br><br><br>
+        <button onclick="copyServerIP()" class="cta-button">Copy IP</button>
+      </div>
+      <p id="copy-message" class="copy-message"></p>
     </div>
-    <br>
-    <!-- Message to show copy success -->
-    <p id="copy-message" class="copy-message"></p>
-  </div>
-  
-  <div class="product-image">
-    <img src="cab.png" alt="Auto Upgrade Pass">
-  </div>
-</section>
-
-
-
-    
-  <section class="hero">
-    <h1>Nova Networks</h1>
-    <p>Fun experiences for anyone in the community to enjoy!</p>
-    <a href="#servers" class="cta-button">Explore Servers</a>
+    <div class="product-image">
+      <img src="hoes%20no%20bg.png" alt="Auto Upgrade Pass">
+    </div>
   </section>
 
-  <!-- Servers Section -->
-  <section id="servers" class="servers-section">
+ <!-- <section class="hero fade-in-on-scroll">
+    <br><br><br><br>
+    <h1>Uniquely crafted minigames for limitless fun!</h1>
+    <p>We are <b>BYTE Play!</b></p>
+    <a href="#servers" class="cta-button">Explore Servers</a>
+  </section> -->
+  <section class="map-showcase fade-in-on-scroll">
+    <div class="map-overlay"></div>
+    <div class="map-content">
+      <h2>Explore our Worlds</h2>
+      <p>Each and every corner of our maps are built with purpose. Explore a plethora of different features and discover hidden secrets across our worlds.</p>
+      <br>
+    </div>
+  </section>
+  <section id="servers" class="servers-section fade-in-on-scroll">
     <h2>Our Network</h2>
     <div class="server-grid">
       <div class="server-card">
-        <img src="99.png" alt="Survival">
-        <h3>Nova99</h3>
-
-          <h1>Coming Soon</h1>
-                    <br>
-        <p>Our flagship server with a balanced economy, PVP and advanced progression. Over 20 areas to unlock across 2 worlds! Completely custom coded to create a fun experience for any player. </p>
+        <img src="full%20sized%20hoe.png" alt="Survival">
+        <h3>Fertilia!</h3>
+        <h6>Out Now!</h6>
+        <p>Increase Farm Level to get better crops to sell for more cash! Rebirth to unlock better crops and shop with the Travelling Merchant to get boosters!</p>
+        <br><h3>Today is your lucky day?</h3>
       </div>
       <div class="server-card">
         <img src="creative.png" alt="Creative">
         <h3>Collect All Blocks!</h3>
-                    <h6>Out Now!</h6>
-        <p>Over 100+ rare blocks to collect in this unique box gamemode!</p> <p>Chances ranging from 50% drop chances, to 0.05%!</p> <br><h3>Can you collect them all?</h3>
+        <h6>Out Now!</h6>
+        <p>Over 100+ rare blocks to collect in this unique box gamemode!</p>
+        <p>Chances ranging from 50% drop chances, to 0.05%!</p>
+        <br><h3>Can you collect them all?</h3>
       </div>
       <div class="server-card">
         <img src="skyblock.png" alt="Skyblock">
-        <h3>Nova Survival</h3>
-                    <h1>Coming Soon</h1>
-                    <br>
-        <p>Our unique take on the original Survival gamemode. A mix of semi-vanilla with shopkeepers, a balanced economy, with a slight anarchy-twist. A non-inflated economy with money earnt through difficult grinding, with awesome bosses!</p>
+        <h3>Cherry Ring</h3>
+        <h6>Out Now!</h6>
+        <p>Dive into the serene world of Cherry Ring, a 250x250 border survival server! With weekly server wipes, you'll need to act fast to rise to the top and become the most powerful player.</p>
+        <br><h3>Will you dominate the next wipe?</h3>
       </div>
-
-        
     </div>
   </section>
 
-<!-- Stats Section -->
-<section class="stats-section">
-        <h1>Stats</h1>
-    <h2>We're only small!</h2>
+  <section class="stats-section fade-in-on-scroll">
+    <h1>Stats</h1>
     <div class="container">
-        <div class="stats-grid">
-            <!-- Long Vertical Stat Box (left) -->
-            <div class="stat-box long-stat">
-                <h2>Concurrent Peak</h2>
-                <p>Collect All Blocks: 15 </p>
-                <!-- <small>That's 618 players on our overpowered network and proxy!</small> -->
-            </div>
-
-            <!-- Two Smaller Stat Boxes (right) -->
-            <div class="smaller-stats">
-                <div class="stat-box smaller-stat">
-                    <h2>Unique Joins</h2>
-                    <p>1,500 and counting..</p>
-                    <small>That's over 5000 database entries!</small>
-                </div>
-                <div class="stat-box smaller-stat">
-                    <h2>Rare Blocks Mined</h2>
-                    <p>9,889 and counting..</p>
-                    <small>Including blocks under 0.1% drop chance!</small>
-                </div>
-            </div>
+      <div class="stats-grid">
+        <div class="stat-box long-stat">
+          <h2>Highest Concurrent Players per server</h2>
+          <p>Fertilia: 18 </p>
+          <p>Collect All Blocks: 15</p>
         </div>
+        <div class="smaller-stats">
+          <div class="stat-box smaller-stat">
+            <h2>Unique Joins</h2>
+            <p>6,700 and counting..</p>
+            <small>That's over 67,000 database entries!</small>
+          </div>
+          <div class="stat-box smaller-stat">
+            <h2>Fertilia Farmers</h2>
+            <p>127 players and counting..</p>
+            <small>have farmed over 5,000 Crops!</small>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-
-  <!-- Latest Updates Section -->
-  <section id="updates" class="updates-section">
-    <h2>Latest Updates</h2>
+  <section id="updates" class="updates-section fade-in-on-scroll">
+    <h2>Latest Announcements</h2>
     <div class="update-grid">
       <div class="update-card">
-        <h3>Collect All Blocks - Announcement!</h3>
-        <p>Play our brand new unique gamemode and collect all 100 different blocks in this unique box server!</p>
-        <a href="post1.html" class="update-link">Learn More</a>
+        <h3>Rebranding Announcement</h3>
+        <p>We're rebranding to reflect our goals and aspirations.</p>
+        <a href="post8.html" class="update-link">Learn More</a>
       </div>
       <div class="update-card">
-        <h3>N/A</h3>
-        <p>Nothing yet!</p>
+        <h3>Fertilia - Announcement!</h3>
+        <p>Can you become a top farmer?!</p><br><br>
+        <a href="post7.html" class="update-link">Learn More</a>
       </div>
     </div>
   </section>
 
+  <!-- <section class="achievements-section fade-in-on-scroll">
+    <h2>BYTE Achievements</h2>
+    <div class="achievement-grid">
+      <div class="achievement-card">
+        <h3>Top Server Uptime</h3>
+        <p>Our servers maintained 99.99% uptime over the last 12 months!</p>
+      </div>
+      <div class="achievement-card">
+        <h3>Player Milestone</h3>
+        <p>6,700+ unique players joined since launch — thank you!</p>
+      </div>
+      <div class="achievement-card">
+        <h3>Game Innovation</h3>
+        <p>First Australian-hosted farm progression RPG using real-time boosters and custom scripts.</p>
+      </div>
+    </div>
+  </section> -->
 
- <!--
-    <section class="product-section">
-  <div class="feature-info">
-        <div class="feature-image">
-    <img src="nova-survival-kit.png" alt="Nova Survival Kit">
-  </div>
-    <h1>New Feature!</h1><p></p>
-      <h2>Nova99 - DB</h2>
-    <p>View the top balances of the best players, every leaderboard in-game and more on our website!</p> <br> <h5>Available Now!</h5>
-      <br>
-    <a href="baltop.html" class="cta-button">View</a>
-  </div>
+<section id="shop" class="stats-section fade-in-on-scroll" style="background: linear-gradient(145deg, #0d1b2a, #1b263b); color: white; text-align: center; padding: 5rem 2rem; position: relative;">
+  <h1 style="font-size: 3rem;">🛒 BYTE Store</h1>
+  <h3 style="max-width: 800px; margin: 0 auto;">Epic upgrades. Exclusive boosts. One-click access to power up your game!</h3>
+  <p style="margin-top: 1.5rem; font-size: 1.1rem; color: #ccc;">Access powerful boosters, XP perks, and prestige upgrades. <br><br>We keep our games Free to Play friendly, while upkeeping our server.</p>
+  
+  <br>
+  <br>
 
+  <a href="https://novanetworks.tebex.io" class="cta-button" style="margin-top: 3rem; animation: pulse-glow 2s infinite;">Visit Shop</a>
+
+  <style>
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 10px #00b4d8; }
+      50% { box-shadow: 0 0 25px #00b4d8; }
+      100% { box-shadow: 0 0 10px #00b4d8; }
+    }
+
+    .store-icons img {
+      filter: drop-shadow(0 0 4px #0ff4);
+    }
+
+    .store-icons p {
+      margin-top: 0.2rem;
+      font-weight: bold;
+      color: #fff;
+    }
+  </style>
 </section>
-     -->
-    
-  <!-- Shop Promotion Section -->
-  <section id="shop" class="shop-section">
-    <h2>Shop Nova Products</h2>
-    <p>Grab the latest Nova Networks gear and in-game items from our shop!</p>
-      <br><br>
-    <a href="shop.html" class="cta-button">Visit Shop</a>
-  </section>
 
-  <footer>
-    <p>&copy; 2024 Nova Networks. All rights reserved.</p>
-  </footer>
+
+
+
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
+
+  <!-- Scripts -->
+  <script>
+    function copyServerIP() {
+      const serverIP = "fertilia.novamc.net";
+      navigator.clipboard.writeText(serverIP).then(() => {
+        document.getElementById("copy-message").innerText = "Server IP copied!";
+        setTimeout(() => {
+          document.getElementById("copy-message").innerText = "";
+        }, 2000);
+      }).catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
+    }
+
+    window.onload = function () {
+      const img = document.querySelector('.product-image img');
+      const productImageContainer = document.querySelector('.product-image');
+      if (img) {
+        img.onload = function () {
+          const aspectRatio = img.naturalHeight / img.naturalWidth;
+          if (aspectRatio > 2) {
+            productImageContainer.classList.add('hidden');
+          }
+        };
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+
+      document.querySelectorAll('.fade-in-on-scroll').forEach((el) => {
+        observer.observe(el);
+      });
+    };
+  </script>
+
 </body>
 </html>
-
-
-
