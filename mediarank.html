@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baltop - BYTE Play</title>
+    <title>Media - BYTE Play</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="styles.css">
@@ -31,7 +31,7 @@
     <br><h2>Get rewarded for creating content on BYTE Play servers!</h2>
         <h3>And no.. we're not just talking about a measily Discord role.</h3>
           <br><br><br>
-  <a href="https://byteplay.tebex.io" class="cta-button" style="margin-top: 3rem; animation: pulse-glow 2s infinite;">Visit Shop</a>
+  <a href="https://forms.gle/6b11RX8oNqJD9qq87" class="cta-button" style="margin-top: 3rem; animation: pulse-glow 2s infinite;">Apply Now</a>
   </section>
 
 <section class="affiliate-perks fade-in-on-scroll">
@@ -96,6 +96,45 @@
     .then(data => {
       document.getElementById("footer-placeholder").innerHTML = data;
     });
-</script>
+
+    function copyServerIP() {
+      const serverIP = "fertilia.novamc.net";
+      navigator.clipboard.writeText(serverIP).then(() => {
+        document.getElementById("copy-message").innerText = "Server IP copied!";
+        setTimeout(() => {
+          document.getElementById("copy-message").innerText = "";
+        }, 2000);
+      }).catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
+    }
+
+    window.onload = function () {
+      const img = document.querySelector('.product-image img');
+      const productImageContainer = document.querySelector('.product-image');
+      if (img) {
+        img.onload = function () {
+          const aspectRatio = img.naturalHeight / img.naturalWidth;
+          if (aspectRatio > 2) {
+            productImageContainer.classList.add('hidden');
+          }
+        };
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+
+      document.querySelectorAll('.fade-in-on-scroll').forEach((el) => {
+        observer.observe(el);
+      });
+    };
+  </script>
 </body>
 </html>
