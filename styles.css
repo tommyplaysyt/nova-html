@@ -1,4 +1,67 @@
-    .site-footer {
+/* Reuse affiliate-perks styles but flip layout when 'alt-layout' class is applied */
+.affiliate-perks.alt-layout .perk-container {
+  flex-direction: row;
+}
+
+
+.affiliate-perks {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Outfit', sans-serif;
+}
+
+.perk-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.perk-image img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.perk-description {
+  flex: 1;
+  min-width: 280px;
+}
+
+.perk-description h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.perk-description p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.perk-description ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.perk-description li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.perk-description li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+.site-footer {
       background: #0a0a0a;
       color: #ccc;
       padding: 2rem 1rem;
@@ -971,11 +1034,28 @@ nav a:hover {
 }
 
 
-.server-card h6 {
+
+
+.server-card h6-green {
   font-size: 2rem;
   color: #62E088;
   margin-bottom: 20px;
 }
+
+.server-card h6-orange {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #f1a943;
+
+}
+
+.server-card h6-pink {
+  font-size: 2rem;
+  color: #f143ea;
+  margin-bottom: 20px;
+}
+
+
 .product-info p {
   font-size: 1.2rem;
   margin-bottom: 20px;
