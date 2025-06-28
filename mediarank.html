@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baltop - BYTE Play</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="main-header fade-in-on-scroll">
+    <div class="logo">
+      <img src="nova-logo.png" alt="Nova Networks Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index" >Home</a></li>
+        <li><a href="servers">Servers</a></li>
+        <li><a href="developer-blog">Posts</a></li>
+        <li><a href="baltop">DB</a></li>
+        <li><a href="https://byteplay.tebex.io">Shop</a></li>
+        <li><a href="mediarank" class="active">Media Rank</a></li>
+      </ul>
+    </nav>
+  </header>
+
+      <section class="hero">
+    <h1>Affiliate Rank</h1>
+    <h2>Are you a content creator or streamer?</h2>
+    <br><h2>Get rewarded for creating content on BYTE Play servers!</h2>
+        <h3>And no.. we're not just talking about a measily Discord role.</h3>
+  </section>
+
+<section class="affiliate-perks fade-in-on-scroll">
+  <div class="perk-container">
+    <div class="perk-image">
+      <img src="/img/post10-img2.png" alt="Affiliate Perk Image">
+    </div>
+    <div class="perk-description">
+        <h1>Fertilia:</h1>
+      <h2>Affiliate Crate</h2>
+      <p>On Fertilia, receive <b>5x Affiliate Crates on sign-up.</b></p>
+      <p>These items are tradable.</p>
+      <p>Every update, you'll also receive an extra <b>5x Affiliate Crates too.</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="affiliate-perks alt-layout fade-in-on-scroll">
+  <div class="perk-container">
+    <div class="perk-description">
+      <h2>Discord Perks</h2>
+      <p>Gain access to the <b>#affilates</b> channel to advertise content on our Discord Server. We're here to grow <b>with you.</b></p>
+      <p>You'll also have access to the <b>#private-affliates</b> channel to chat with <b>developers and moderators of the server.</b></p>
+      
+    </div>
+    <div class="perk-image">
+      <img src="/img/post7-img9.png" alt="Creator Dashboard Preview">
+    </div>
+  </div>
+</section>
+
+<section class="affiliate-perks fade-in-on-scroll">
+  <div class="perk-container">
+    <div class="perk-image">
+      <img src="/img/post10-img2.png" alt="Affiliate Perk Image">
+    </div>
+    <div class="perk-description">
+      <h2>Server Store - Affiliate Code</h2>
+      <p>Earn <b>10%</b> on users who use your affiliate code.</p>
+      <p>On sign-up, <b>you'll also receive a 10% discount code for your viewers to use</b> that lasts for a month.</p>
+    </div>
+  </div>
+</section>
+    
+<section class="affiliate-perks alt-layout fade-in-on-scroll">
+  <div class="perk-container">
+    <div class="perk-description">
+      <h2>Your Role, Your Perks, Forever.</h2>
+      <p>Assuming you do not lose access to your channel, <b>keep your role and perks forever.</b></p>
+      <p>Throughout current and future projects, you'll be the <b>first to know about them.</b></p>
+      
+    </div>
+    <div class="perk-image">
+      <img src="/img/post7-img9.png" alt="Creator Dashboard Preview">
+    </div>
+  </div>
+</section>
+<div id="footer-placeholder"></div>
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+</body>
+</html>
