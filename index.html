@@ -1,324 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta charset="UTF-8">
-  <meta property="og:title" content="BYTE Play">
-  <meta property="og:description" content="At BytePlay, we’re striving to be more than just a studio—we’re builders of bite-sized and expansive Minecraft Servers alike. Our newest server, Fertilia is OUT NOW!">
-  <meta property="og:image" content="/img/favicon.ico">
-  <meta property="og:url" content="https://novamc.net">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BYTE Play</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="styles.css"/>
-
-  <style>
-    @keyframes fadeSlideUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .fade-in-on-scroll {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-
-    .fade-in-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .map-showcase {
-      position: relative;
-      background: url('our-worlds.png') center center / cover no-repeat;
-      height: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .map-overlay {
-      position: absolute;
-      inset: 0;
-      backdrop-filter: blur(6px);
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    .map-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      color: white;
-      padding: 2rem;
-    }
-
-    .achievements-section {
-      background: #0f0f0f;
-      padding: 4rem 2rem;
-      color: white;
-      text-align: center;
-    }
-
-    .achievement-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .achievement-card {
-      background: #1e1e1e;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 150, 255, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .achievement-card:hover {
-      transform: scale(1.03);
-    }
-
-    .achievement-card h3 {
-      margin-bottom: 1rem;
-      color: #00bfff;
-    }
-
-    .achievement-card p {
-      font-size: 0.95rem;
-      line-height: 1.4;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BytePlay - Minecraft Servers</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
+<style>
+/* Additional custom CSS */
+.bg-hero {
+  background: linear-gradient(to bottom right, #2AA8FF, #6B8BFF);
+}
+.glass {
+  backdrop-filter: blur(10px) saturate(1.5);
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+</style>
 </head>
-<body>
+<body class="min-h-screen bg-slate-900 text-white flex">
+<!-- Sidebar -->
+<aside class="hidden lg:flex flex-col w-64 p-6 bg-slate-800 border-r border-slate-700">
+  <div class="flex items-center mb-8">
+    <img src="byteplay.png" alt="BytePlay Logo" class="h-10 mr-2">
+    <span class="text-2xl font-bold">BytePlay</span>
+  </div>
+  <nav class="space-y-4">
+    <a href="https://byteplay.tebex.io" class="flex items-center space-x-2 hover:text-blue-300"><i class="fa-solid fa-store text-lg"></i><span>Store</span></a>
+    <a href="https://discord.gg/byteplay" class="flex items-center space-x-2 hover:text-blue-300"><i class="fa-brands fa-discord text-lg"></i><span>Discord</span></a>
+    <a href="#servers" class="flex items-center space-x-2 hover:text-blue-300"><i class="fa-solid fa-server text-lg"></i><span>Servers</span></a>
+    <a href="#posts" class="flex items-center space-x-2 hover:text-blue-300"><i class="fa-solid fa-newspaper text-lg"></i><span>Posts</span></a>
+    <a href="#database" class="flex items-center space-x-2 hover:text-blue-300"><i class="fa-solid fa-database text-lg"></i><span>DB</span></a>
+  </nav>
+  <div class="mt-auto pt-6">
+    <button onclick="copyIP()" class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-center">Copy IP</button>
+  </div>
+</aside>
 
-  <header class="main-header fade-in-on-scroll">
-    <div class="logo">
-      <img src="nova-logo.png" alt="Nova Networks Logo">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index" class="active">Home</a></li>
-        <li><a href="servers">Servers</a></li>
-        <li><a href="developer-blog">Posts</a></li>
-        <li><a href="baltop">DB</a></li>
-        <li><a href="https://byteplay.tebex.io">Shop</a></li>
-        <li><a href="mediarank">Media Rank</a></li>
-      </ul>
-    </nav>
-  </header>
+<!-- Mobile Top Bar -->
+<header class="lg:hidden flex justify-between items-center p-4 bg-slate-800 border-b border-slate-700">
+  <div class="flex items-center">
+    <img src="byteplay.png" alt="BytePlay Logo" class="h-8 mr-2">
+    <span class="text-xl font-bold">BytePlay</span>
+  </div>
+  <div class="flex space-x-4">
+    <a href="https://byteplay.tebex.io" class="text-blue-400"><i class="fa-solid fa-store"></i></a>
+    <a href="https://discord.gg/byteplay" class="text-blue-400"><i class="fa-brands fa-discord"></i></a>
+    <button onclick="copyIP()" class="text-blue-400"><i class="fa-solid fa-copy"></i></button>
+  </div>
+</header>
 
-  <section class="product-section fade-in-on-scroll">
-    <div class="product-info">
-      <h6>OUT NOW!</h6>
-      <gradient-text>Fertilia!</gradient-text>
-      <br><br>
-      <h2>Today is your lucky day?</h2><br>
-      <div class="ip">
-        <span id="server-ip">fertilia.novamc.net</span><br><br><br>
-        <button onclick="copyServerIP()" class="cta-button">Copy IP</button>
-      </div>
-      <p id="copy-message" class="copy-message"></p>
-    </div>
-    <div class="product-image">
-      <img src="hoes%20no%20bg.png" alt="Auto Upgrade Pass">
-    </div>
-  </section>
-
- <!-- <section class="hero fade-in-on-scroll">
-    <br><br><br><br>
-    <h1>Uniquely crafted minigames for limitless fun!</h1>
-    <p>We are <b>BYTE Play!</b></p>
-    <a href="#servers" class="cta-button">Explore Servers</a>
-  </section> -->
-  <section class="map-showcase fade-in-on-scroll">
-    <div class="map-overlay"></div>
-    <div class="map-content">
-      <h2>Explore our Worlds</h2>
-      <p>Each and every corner of our maps are built with purpose. Explore a plethora of different features and discover hidden secrets across our worlds.</p>
-      <br>
-    </div>
-  </section>
-  <section id="servers" class="servers-section fade-in-on-scroll">
-    <h2>Our Projects</h2>
-    <div class="server-grid">
-
-      <div class="server-card">
-        <img src="creative.png" alt="Creative">
-        <h3>Collect All Blocks!</h3>
-        <h6-pink><b>Archived</b></h6-pink><br>
-        <p>Over 100+ rare blocks to collect in this unique box gamemode!</p>
-        <p>Chances ranging from 50% drop chances, to 0.05%!</p>
-        <br><h3>Can you collect them all?</h3>
-      </div>
-      <div class="server-card">
-        <img src="full%20sized%20hoe.png" alt="Survival">
-        <h3>Fertilia!</h3>
-        <h6-green><b>Out Now!</b></h6-green>
-        <p>Increase Farm Level to get better crops to sell for more cash! Rebirth to unlock better crops and shop with the Travelling Merchant to get boosters!</p>
-        <br><h3>Today is your lucky day?</h3>
-      </div>
-      <div class="server-card">
-        <img src="red vs blue icon.png" alt="Skyblock">
-        <h3>Red vs Blue</h3>
-        <h6-orange><b>In-Dev</b></h6-orange><br>
-        <p>Battle head-to-head in this round-based server! Team up with friends, level up your kit, and rack up kills to become the MVP!</p>
-        <br><h3>Will you become the MVP?</h3>
-      </div>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col overflow-x-hidden">
+  <!-- Hero Section -->
+  <section class="relative px-6 lg:px-12 py-16 bg-hero text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Welcome to BytePlay</h1>
+    <p class="text-lg md:text-xl text-slate-200 mb-8 max-w-3xl mx-auto">Home to Fertilia, Collect All Blocks, and Red vs Blue — dive into unique, modded realms with no pay-to-win.</p>
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <a href="https://byteplay.tebex.io" class="px-6 py-3 bg-white text-slate-900 rounded-lg font-medium hover:bg-gray-200 flex items-center space-x-2"><i class="fa-solid fa-store"></i><span>Visit Store</span></a>
+      <a href="https://discord.gg/byteplay" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center space-x-2"><i class="fa-brands fa-discord"></i><span>Join Discord</span></a>
+      <button onclick="copyIP()" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg flex items-center space-x-2"><i class="fa-solid fa-copy"></i><span>Copy IP</span></button>
     </div>
   </section>
 
-  <section class="stats-section fade-in-on-scroll">
-    <h1>Stats</h1>
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-box long-stat">
-          <h2>Highest Concurrent Players per server</h2>
-          <p>Fertilia: 18 </p>
-          <p>Collect All Blocks: 15</p>
-        </div>
-        <div class="smaller-stats">
-          <div class="stat-box smaller-stat">
-            <h2>Unique Joins</h2>
-            <p>8,200 and counting..</p>
-            <small>That's over 80,000 database entries!</small>
+  <!-- Live Snapshot / News -->
+  <section class="px-6 lg:px-12 py-12 bg-slate-900">
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- News Ticker -->
+      <div class="glass p-6">
+        <h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-bullhorn mr-2"></i>Latest News</h2>
+        <ul class="space-y-3 text-slate-200">
+          <li><span class="font-semibold">[Aug 30] Fertilia Season 4 launching soon!</span> Get ready to explore new realms and bosses.</li>
+          <li><span class="font-semibold">[Aug 20] CAB update 2.1</span> adds new blocks and achievements.</li>
+          <li><span class="font-semibold">[Aug 10] Red vs Blue tournament results</span>: Blue team emerges victorious!</li>
+        </ul>
+      </div>
+      <!-- Live Snapshot -->
+      <div class="glass p-6">
+        <h2 class="text-2xl font-bold mb-4"><i class="fa-solid fa-chart-line mr-2"></i>Live Snapshot</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="text-center">
+            <div class="text-sm text-slate-300">Players Online</div>
+            <div class="text-3xl font-bold" id="livePlayers">--</div>
           </div>
-          <div class="stat-box smaller-stat">
-            <h2>Fertilia Farmers</h2>
-            <p>127 players and counting..</p>
-            <small>have farmed over 5,000 Crops!</small>
+          <div class="text-center">
+            <div class="text-sm text-slate-300">All-Time Joins</div>
+            <div class="text-3xl font-bold" id="allJoins">--</div>
+          </div>
+          <div class="col-span-2 text-center">
+            <div class="text-sm text-slate-300">Server Status</div>
+            <div class="text-3xl font-bold" id="serverStatus">Unknown</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="updates" class="updates-section fade-in-on-scroll">
-    <h2>Latest Announcements</h2>
-    <div class="update-grid">
-      <div class="update-card">
-        <h3>Rebranding Announcement</h3>
-        <p>We're rebranding to reflect our goals and aspirations.</p>
-        <a href="post8" class="update-link">Learn More</a>
+  <!-- Servers Section (Mosaic) -->
+  <section id="servers" class="px-6 lg:px-12 py-12 bg-slate-900">
+    <h2 class="text-3xl font-bold mb-8 text-center">Our Servers</h2>
+    <div class="grid md:grid-cols-4 gap-6">
+      <!-- Large card for Fertilia -->
+      <div class="md:col-span-2 row-span-2 glass p-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center mb-4">
+            <i class="fa-solid fa-seedling text-3xl text-green-400 mr-3"></i>
+            <h3 class="text-2xl font-semibold">Fertilia</h3>
+          </div>
+          <p class="text-slate-200 mb-4">Grow your empire in Fertilia — a farming RPG world with custom mobs, quests, and realms.</p>
+        </div>
+        <a href="fertilia-update-6.html" class="mt-auto inline-block px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-white text-sm text-center">View Updates</a>
       </div>
-      <div class="update-card">
-        <h3>Fertilia - Announcement!</h3>
-        <p>Can you become a top farmer?!</p><br><br>
-        <a href="post7" class="update-link">Learn More</a>
+      <!-- Small card 1: Collect All Blocks -->
+      <div class="glass p-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center mb-4">
+            <i class="fa-solid fa-cubes text-2xl text-yellow-300 mr-3"></i>
+            <h3 class="text-xl font-semibold">Collect All Blocks</h3>
+          </div>
+          <p class="text-slate-200 mb-4 text-sm">Gather and craft every block in the game. Compete with others in this unique challenge.</p>
+        </div>
+        <a href="cab.html" class="mt-auto inline-block px-4 py-2 bg-yellow-500 hover:bg-yellow-600 rounded-lg text-slate-900 text-sm text-center">Learn More</a>
+      </div>
+      <!-- Small card 2: Red vs Blue -->
+      <div class="glass p-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center mb-4">
+            <i class="fa-solid fa-flag text-2xl text-red-400 mr-3"></i>
+            <h3 class="text-xl font-semibold">Red vs Blue</h3>
+          </div>
+          <p class="text-slate-200 mb-4 text-sm">Battle it out with your friends in this fast-paced, base-building PvP mode.</p>
+        </div>
+        <a href="red-vs-blue.html" class="mt-auto inline-block px-4 py-2 bg-red-600 hover:bg-red-700 rounded-lg text-white text-sm text-center">Play Now</a>
+      </div>
+      <!-- Extra filler card: Developer Blog -->
+      <div class="glass p-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center mb-4">
+            <i class="fa-solid fa-code text-2xl text-purple-400 mr-3"></i>
+            <h3 class="text-xl font-semibold">Developer Blog</h3>
+          </div>
+          <p class="text-slate-200 mb-4 text-sm">Peek behind the scenes and see how our team builds and updates the BytePlay network.</p>
+        </div>
+        <a href="developer-blog.html" class="mt-auto inline-block px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg text-white text-sm text-center">Read Blog</a>
       </div>
     </div>
   </section>
 
-  <!-- <section class="achievements-section fade-in-on-scroll">
-    <h2>BYTE Achievements</h2>
-    <div class="achievement-grid">
-      <div class="achievement-card">
-        <h3>Top Server Uptime</h3>
-        <p>Our servers maintained 99.99% uptime over the last 12 months!</p>
-      </div>
-      <div class="achievement-card">
-        <h3>Player Milestone</h3>
-        <p>6,700+ unique players joined since launch — thank you!</p>
-      </div>
-      <div class="achievement-card">
-        <h3>Game Innovation</h3>
-        <p>First Australian-hosted farm progression RPG using real-time boosters and custom scripts.</p>
+  <!-- Posts Section -->
+  <section id="posts" class="px-6 lg:px-12 py-12 bg-slate-900">
+    <h2 class="text-3xl font-bold mb-8 text-center">Latest Posts & Updates</h2>
+    <div class="relative">
+      <div class="border-l-2 border-slate-700 ml-4 pl-6 space-y-8">
+        <!-- Post item 1 -->
+        <div class="relative">
+          <div class="absolute -left-3 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-slate-900"></div>
+          <h4 class="text-xl font-semibold mb-1">Fertilia Update 6</h4>
+          <time class="block text-sm text-slate-400 mb-2">Aug 30, 2025</time>
+          <p class="text-slate-200">Discover our latest revamp to the Fertilia UI, with improved quests and new animals.</p>
+          <a href="fertilia-update-6.html" class="inline-block mt-2 text-blue-500 hover:text-blue-300 text-sm">Read more →</a>
+        </div>
+        <!-- Post item 2 -->
+        <div class="relative">
+          <div class="absolute -left-3 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-slate-900"></div>
+          <h4 class="text-xl font-semibold mb-1">CAB 2.1 Release</h4>
+          <time class="block text-sm text-slate-400 mb-2">Aug 20, 2025</time>
+          <p class="text-slate-200">Version 2.1 adds new block categories, achievements, and improved scoreboard features.</p>
+          <a href="cab-update.html" class="inline-block mt-2 text-blue-500 hover:text-blue-300 text-sm">Read more →</a>
+        </div>
+        <!-- Post item 3 -->
+        <div class="relative">
+          <div class="absolute -left-3 top-1 w-6 h-6 bg-blue-600 rounded-full border-4 border-slate-900"></div>
+          <h4 class="text-xl font-semibold mb-1">Red vs Blue Tournament Results</h4>
+          <time class="block text-sm text-slate-400 mb-2">Aug 10, 2025</time>
+          <p class="text-slate-200">Congratulations to the Blue team for taking home the victory in our monthly tournament!</p>
+          <a href="red-vs-blue-tournament.html" class="inline-block mt-2 text-blue-500 hover:text-blue-300 text-sm">Read more →</a>
+        </div>
       </div>
     </div>
-  </section> -->
+  </section>
+</main>
 
-<section id="shop" class="stats-section fade-in-on-scroll" style="background: linear-gradient(145deg, #0d1b2a, #1b263b); color: white; text-align: center; padding: 5rem 2rem; position: relative;">
-  <h1 style="font-size: 3rem;">🛒 BYTE Store</h1>
-  <h3 style="max-width: 800px; margin: 0 auto;">Useful upgrades. Support our projects!</h3>
-  <p style="margin-top: 1.5rem; font-size: 1.1rem; color: #ccc;">Access powerful boosters, XP perks, and prestige upgrades. <br><br>We keep our games Free to Play friendly, while upkeeping our server.</p>
-  
-  <br>
-  <br>
+<!-- Quick Action Dock for mobile -->
+<div class="fixed bottom-4 right-4 z-50 flex flex-col space-y-2 lg:hidden">
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="p-3 bg-blue-600 hover:bg-blue-700 rounded-full text-white shadow-lg"><i class="fa-solid fa-arrow-up"></i></button>
+  <a href="https://discord.gg/byteplay" class="p-3 bg-blue-600 hover:bg-blue-700 rounded-full text-white shadow-lg flex items-center justify-center"><i class="fa-brands fa-discord"></i></a>
+</div>
 
-  <a href="https://byteplay.tebex.io" class="cta-button" style="margin-top: 3rem; animation: pulse-glow 2s infinite;">Visit Shop</a>
-
-  <style>
-    @keyframes pulse-glow {
-      0% { box-shadow: 0 0 10px #00b4d8; }
-      50% { box-shadow: 0 0 25px #00b4d8; }
-      100% { box-shadow: 0 0 10px #00b4d8; }
-    }
-
-    .store-icons img {
-      filter: drop-shadow(0 0 4px #0ff4);
-    }
-
-    .store-icons p {
-      margin-top: 0.2rem;
-      font-weight: bold;
-      color: #fff;
-    }
-  </style>
-</section>
-
-
-
-
-<div id="footer-placeholder"></div>
 <script>
-  fetch("footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-    });
+// Copy IP to clipboard and provide feedback
+function copyIP() {
+  navigator.clipboard.writeText('fertilia.novamc.net').then(function() {
+    alert('IP copied to clipboard: fertilia.novamc.net');
+  }, function() {
+    alert('Failed to copy IP');
+  });
+}
+
+// Example live data update (placeholder; you can replace with actual API if available)
+(function() {
+  const playersEl = document.getElementById('livePlayers');
+  const joinsEl = document.getElementById('allJoins');
+  const statusEl = document.getElementById('serverStatus');
+  // Example static values
+  const data = {
+    playerCount: 12,
+    joins: 1024,
+    status: 'Online'
+  };
+  if (playersEl) playersEl.textContent = data.playerCount;
+  if (joinsEl) joinsEl.textContent = data.joins.toLocaleString();
+  if (statusEl) statusEl.textContent = data.status;
+})();
 </script>
-
-
-  <!-- Scripts -->
-  <script>
-    function copyServerIP() {
-      const serverIP = "fertilia.novamc.net";
-      navigator.clipboard.writeText(serverIP).then(() => {
-        document.getElementById("copy-message").innerText = "Server IP copied!";
-        setTimeout(() => {
-          document.getElementById("copy-message").innerText = "";
-        }, 2000);
-      }).catch((err) => {
-        console.error("Failed to copy: ", err);
-      });
-    }
-
-    window.onload = function () {
-      const img = document.querySelector('.product-image img');
-      const productImageContainer = document.querySelector('.product-image');
-      if (img) {
-        img.onload = function () {
-          const aspectRatio = img.naturalHeight / img.naturalWidth;
-          if (aspectRatio > 2) {
-            productImageContainer.classList.add('hidden');
-          }
-        };
-      }
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, {
-        threshold: 0.15
-      });
-
-      document.querySelectorAll('.fade-in-on-scroll').forEach((el) => {
-        observer.observe(el);
-      });
-    };
-  </script>
-
 </body>
 </html>
