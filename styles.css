@@ -1,3 +1,46 @@
+.reboot-banner {
+  position: relative;
+  background: url('img/post12-img1.PNG') center center / cover no-repeat;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.reboot-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(1px);
+}
+
+.reboot-content {
+  position: relative;
+  font-size: 1rem;
+  color: white;
+  z-index: 2;
+}
+
+.reboot-content h2 {
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.reboot-content p {
+  margin: 8px 0 14px 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+#reboot-countdown {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+
 /* Reuse affiliate-perks styles but flip layout when 'alt-layout' class is applied */
 .affiliate-perks.alt-layout .perk-container {
   flex-direction: row;
