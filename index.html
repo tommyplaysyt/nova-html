@@ -193,9 +193,9 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat-box long-stat">
-          <h2>Highest Concurrent Players per server</h2>
-          <p>Fertilia: 18 </p>
-          <p>Collect All Blocks: 15</p>
+          <h2>Best CCU Per-server</h2>
+          <p>Fertilia: 18 players</p>
+          <p>Collect All Blocks: 15 players</p>
         </div>
         <div class="smaller-stats">
           <div class="stat-box smaller-stat">
@@ -212,7 +212,7 @@
       </div>
     </div>
   </section>
-
+<!--
   <section id="updates" class="updates-section fade-in-on-scroll">
     <h2>Latest Announcements</h2>
     <div class="update-grid">
@@ -227,7 +227,7 @@
         <a href="post7" class="update-link">Learn More</a>
       </div>
     </div>
-  </section>
+  </section>-->
 
   <!-- <section class="achievements-section fade-in-on-scroll">
     <h2>BYTE Achievements</h2>
@@ -331,12 +331,12 @@
     };
   </script>
 
-  <script>
-  // Set launch date here
-  const rebootLaunch = new Date("2025-12-01T02:00:00+00:00").getTime();
+<script>
+  // Launch time in UNIX seconds
+  const rebootLaunch = 1764518400;
 
   function updateRebootCountdown() {
-    const now = new Date().getTime();
+    const now = Math.floor(Date.now() / 1000); // current UNIX time in seconds
     const distance = rebootLaunch - now;
 
     if (distance <= 0) {
@@ -344,10 +344,10 @@
       return;
     }
 
-    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((distance % (1000 * 60)) / 1000);
+    const d = Math.floor(distance / 86400); // 24 * 60 * 60
+    const h = Math.floor((distance % 86400) / 3600);
+    const m = Math.floor((distance % 3600) / 60);
+    const s = Math.floor(distance % 60);
 
     document.getElementById("reboot-countdown").innerText =
       `${d}d ${h}h ${m}m ${s}s`;
@@ -356,6 +356,7 @@
   setInterval(updateRebootCountdown, 1000);
   updateRebootCountdown();
 </script>
+
 
   
 </body>
