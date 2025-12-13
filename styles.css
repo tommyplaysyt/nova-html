@@ -379,6 +379,13 @@ body {
     font-size: 2em;
 }
 
+#server-ip-2 {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 2em;
+}
+
 .copy-btn {
     font-weight: bold;
     font-family: 'Outfit', sans-serif;
@@ -408,6 +415,11 @@ body {
     margin-top: 15px;
 }
 
+.copy-message-2 {
+    color: #ffffff;
+    font-size: 0.9em;
+    margin-top: 15px;
+}
 
 /* Blog Section */
 .blog-container {
@@ -1117,15 +1129,16 @@ nav a:hover {
 /* Existing CSS... */
 .server-grid {
   display: flex;
-  justify-content: space-around;
+  gap: 20px;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px; /* Optional: spacing between rows */
 }
 
 .server-card {
   background-color: #fff;
   border-radius: 10px;
-  width: 50%;
+  width: 100%;
+  max-width: 600px; /* desktop size cap */
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -1133,15 +1146,16 @@ nav a:hover {
 }
 
 /* Add this at the bottom of your CSS */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 525px) {
   .server-grid {
     flex-direction: column;
     align-items: center; /* Center the stacked cards */
   }
 
   .server-card {
-    width: 100%; /* Take up more horizontal space */
+    max-width: 100%;
     margin-bottom: 20px;
+    text-size-adjust: auto;
   }
 }
 

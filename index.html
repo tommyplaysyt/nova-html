@@ -121,9 +121,15 @@
 <section class="reboot-banner fade-in-on-scroll">
   <div class="reboot-overlay"></div>
   <div class="reboot-content">
-    <h2>Fertilia: Reboot</h2>
-    <p>Join us for Admin Abuse + more!</p>
+    <h2>Fertilia!</h2>
+    <p>Farm crops, plant seeds, fight bosses and more!</p>
     <h3 id="reboot-countdown">Loading countdown...</h3>
+    <br><br>
+          <div class="ip">
+        <span id="server-ip-2">fertilia.byteplay.xyz</span><br><br><br>
+        <button onclick="copyServerIP2()" class="cta-button">Copy IP</button>
+      </div>
+      <p id="copy-message-2" class="copy-message-2"></p>
   </div>
 </section>
 
@@ -291,6 +297,17 @@
 
   <!-- Scripts -->
   <script>
+    function copyServerIP2() {
+      const serverIP = "fertilia.byteplay.xyz";
+      navigator.clipboard.writeText(serverIP).then(() => {
+        document.getElementById("copy-message-2").innerText = "Server IP copied!";
+        setTimeout(() => {
+          document.getElementById("copy-message-2").innerText = "";
+        }, 2000);
+      }).catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
+    }
     function copyServerIP() {
       const serverIP = "fertilia.byteplay.xyz";
       navigator.clipboard.writeText(serverIP).then(() => {
@@ -340,7 +357,7 @@
     const distance = rebootLaunch - now;
 
     if (distance <= 0) {
-      document.getElementById("reboot-countdown").innerText = "Launching now!";
+      document.getElementById("reboot-countdown").innerText = "Out now!";
       return;
     }
 
